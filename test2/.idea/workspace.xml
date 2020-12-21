@@ -10,16 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f600abf6-e8d1-4d57-9642-1af2330d6a24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/showline.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/alllines.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/alllines.vue" afterDir="false" />
-    </list>
+    <list default="true" id="f600abf6-e8d1-4d57-9642-1af2330d6a24" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,9 +24,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1lfXGq9OCQhSwfv8WfZT6uShc89" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,6 +55,7 @@
       <updated>1607989026703</updated>
       <workItem from="1607989027814" duration="33280000" />
       <workItem from="1608475771764" duration="12533000" />
+      <workItem from="1608543019781" duration="5827000" />
     </task>
     <servers />
   </component>
@@ -79,15 +72,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608077582663">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="517" y="311" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.827@0.23.1440.827" timestamp="1608077582663" />
-    <state x="485" y="185" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608079521854">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state x="485" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608556970983">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
+    <state x="485" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.816@0.23.1440.816" timestamp="1608556970983" />
     <state x="485" y="185" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.827@0.23.1440.827" timestamp="1608042739951" />
     <state x="485" y="185" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.828@0.23.1440.828" timestamp="1608079140145" />
     <state x="485" y="185" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.829@0.23.1440.829" timestamp="1608079521854" />

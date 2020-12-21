@@ -6,7 +6,7 @@ import index from "../views/index"
 import about from "../views/about"
 import alllines from "../views/alllines"
 import user from "../views/user"
-import showline from "../views/showline"
+import line from "../views/line"
 ;
 
 Vue.use(Router)
@@ -51,9 +51,9 @@ export default new Router({
     },
     //路线展示
     {
-      path: '/showline',
-      name: 'showline',
-      component: showline
+      path: '/line',
+      name: 'line',
+      component: line
     }
   ]
 })

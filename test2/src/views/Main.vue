@@ -32,7 +32,7 @@
         <el-col :span="50">
           <div>
             <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-            <el-button type="primary" @click="submitForm('ruleForm')">线路全览</el-button>
+            <el-button type="primary" @click="userForm('ruleForm')">用户信息</el-button>
           </div>
         </el-col>
       </el-header>
@@ -111,6 +111,16 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.$router.push('/alllines');
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
+    },
+    userForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.$router.push('/user');
         } else {
           console.log('error submit!!');
           return false;

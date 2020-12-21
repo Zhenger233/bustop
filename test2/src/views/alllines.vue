@@ -9,17 +9,13 @@
     <div>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" :label-position="labelPosition" label-width="100px" class="login-box" v-for = "line in item">
       <el-form-item label="">
-        <el-button type="primary" @click="submitForm('ruleForm')">{{line}}</el-button>
+<!--        <el-button type="primary" @click="submitForm('ruleForm')">{{line}}</el-button>-->
+        <el-button type="primary" @click="gotolink" >{{line}}</el-button>
+        <a class="orderBtn1 sIRicon2" href="javascript:void(0);" @click="toInfo(line)">{{line}}</a>
       </el-form-item>
 
     </el-form>
-<!--      <tbody>-->
-<!--                           <tr  v-for="row in item">-->
-<!--                                 <td>{{row}}</td>-->
-<!--                           </tr>-->
-<!--    </tbody>-->
-
-</div>
+    </div>
     </el-main>
   </el-container>
 </template>
@@ -29,12 +25,17 @@
 const axios=require('axios');
   export default {
 
-    data() {return{
+    data() {
+
+
+      return{
+        imgUrl:'',
+
       todos:null,
       item: [],
       apiUrl: 'http://139.155.249.72:2333/api/lines/世纪城',
-
-    }},
+     }
+    },
     created() {
       console.log('\ncreated.\n');
       // this.$http.get(this.apiUrl).then((response) => {
@@ -45,10 +46,25 @@ const axios=require('axios');
       //   console.log('error:', error)
       // })
       axios.get(this.apiUrl).then(res=>{console.log('\nres:',res,'\n');this.item=res.data;}).catch(err=>{console.log(err)});
+    },
+    methods: {
+      gotolink(){
+
+        //点击跳转至上次浏览页面
+        // this.$router.go(-1)
+
+        //指定跳转地址
+        this.$router.replace('/line')
+      },
+      toInfo: function(id){
+        this.$router.push({
+          path: '/line',
+          // name: 'mallList',
+          query: {id:id}
+        })
+      }
+      }
     }
-
-
-  }
 
 </script>
 
