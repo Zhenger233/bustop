@@ -4,7 +4,7 @@ const stationModel=require('../models/station');
 const async = require('async');
 exports.getline = function(req, res, next) {
     //res.send('hi,line '+req.params.linename);
-    var lines = lineModel.findAll({
+    lineModel.findAll({
         where: {
             route_name: req.params.linename
         }

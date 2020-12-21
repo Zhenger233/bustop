@@ -11,9 +11,9 @@ const Admin = db.define('Admin', {
   // 密码
   password: {type: Sequelize.STRING(36), allowNull: false},
   // 姓名
-  role: {type: Sequelize.INTEGER, allowNull: false},
+  role: {type: Sequelize.INTEGER, allowNull: true},
   // 角色
-  name: {type: Sequelize.STRING(20), allowNull: false},
+  name: {type: Sequelize.STRING(20), allowNull: true},
   // 上次登录时间
   lastLoginAt: {type: Sequelize.DATE}
 }, {
