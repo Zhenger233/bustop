@@ -9,6 +9,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/line/:linename',api.getline);
-router.get('/lines/:stationname',api.station2lines)
+router.get('/lines/:stationname',api.station2lines);
+
+
 
 module.exports = router;

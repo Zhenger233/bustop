@@ -14,7 +14,7 @@ var sequelize = new Sequelize(CONFIG.MYSQL.database, CONFIG.MYSQL.username, CONF
 
   // 配置数据库连接池
   pool: {
-    max: 5,
+    max: 500,
     min: 0,
     idle: 10000
   },

@@ -37,4 +37,10 @@ router.get('/delete',function(req,res){
 })
 router.post ('/delete', api.remove);
 
+
+router.get('/feedback',function(req,res){
+  res.sendFile('admin.html',{root:__dirname});
+});
+router.post('/feedback',api.feedback)
+
 module.exports = router;

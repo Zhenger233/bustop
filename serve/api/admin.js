@@ -2,6 +2,7 @@
 const Common = require('./common');
 // 引入admin表的model
 const AdminModel = require('../models/admin');
+const FeedModel = require('../models/feedback');
 // 引入常量
 const Constant = require('../constant/constant');
 // 引入dateformat包
@@ -17,7 +18,8 @@ let exportObj = {
     info,
     add,
     update,
-    remove
+    remove,
+    feedback
 };
 module.exports = exportObj;
 function login(req, res) {
@@ -358,5 +360,31 @@ function remove(req, res) {
         }
     };
     // 执行公共方法中的autoFn方法，返回数据
+    Common.autoFn(tasks, res, resObj)
+}
+
+function feedback(req, res) {
+    const resObj = Common.clone(Constant.DEFAULT_SUCCESS);
+    let tasks = {
+        checkParams: (cb) => {
+            Common.checkParams(req.body, ['id', 'content'], cb);
+        },
+        feed: cb => {
+            FeedModel
+                .create({
+                    uid: req.body.id,
+                    content: req.body.content,
+                    time: new Date(),
+                })
+                .then(function (result) {
+                    console.log('\nfeedresult:',result,'\n');
+                    cb(null);
+                })
+                .catch(function (err) {
+                    console.log('\nfeederr:',err,'\n');
+                    cb(Constant.DEFAULT_ERROR);
+                });
+        }
+    };
     Common.autoFn(tasks, res, resObj)
 }
