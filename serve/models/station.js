@@ -9,7 +9,9 @@ const moment = require('moment');
 const station = db.define('station', {
   station_id: {type: Sequelize.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true},
   station_name: {type: Sequelize.STRING, allowNull: false},
-  station_route_name: {type: Sequelize.STRING, allowNull: false} 
+  station_route_name: {type: Sequelize.STRING, allowNull: false},
+  station_pos_longitude:{type: Sequelize.FLOAT}, 
+  station_pos_latitude:{type: Sequelize.FLOAT} 
 }, {
   // 是否支持驼峰
   underscored: true,

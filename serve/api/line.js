@@ -1,6 +1,7 @@
 //const { body,validationResult } = require("express-validator");
 const lineModel=require('../models/line');
 const stationModel=require('../models/station');
+const busModel=require('../models/bus');
 const async = require('async');
 const sequelize = require('../db');
 exports.getline = function(req, res, next) {
@@ -40,6 +41,10 @@ exports.getstations=function(req,res,next){
         })
         res.json(list);
     })
+}
+exports.getallbus=function(req,res){
+    busModel.findAll().then((result)=>{console.log(result);res.send(result);});
+    //sequelize.query('select * from bus');
 }
 /*
 test=line.findAll({

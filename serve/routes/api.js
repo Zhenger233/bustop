@@ -13,6 +13,7 @@ router.get('/line/:linename',api.getline);
 router.get('/lines/:stationname',api.station2lines);
 router.get('/stations',api.getstations);
 router.get('/allstations',api.getstations);
+router.get('/allbus',api.getallbus);
 
 
 module.exports = router;
