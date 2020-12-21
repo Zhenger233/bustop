@@ -49,8 +49,6 @@ function login(req, res) {
                         resObj.data = {
                             id: result.id,
                             username: result.username,
-                            name: result.name,
-                            role: result.role,
                             lastLoginAt: dateFormat(result.lastLoginAt, 'yyyy-mm-dd HH:MM:ss'),
                             createdAt: dateFormat(result.createdAt, 'yyyy-mm-dd HH:MM:ss')
                         };
@@ -244,7 +242,7 @@ function add(req, res) {
         // 校验参数方法
         checkParams: (cb) => {
             // 调用公共方法中的校验参数方法，成功继续后面操作，失败则传递错误信息到async最终方法
-            Common.checkParams(req.body, ['username', 'password', 'name', 'role'], cb);
+            Common.checkParams(req.body, ['username', 'password'], cb);
         },
         // 添加方法，依赖校验参数方法
         add: cb => {
@@ -253,10 +251,9 @@ function add(req, res) {
                 .create({
                     username: req.body.username,
                     password: req.body.password,
-                    name: req.body.name,
-                    role: req.body.role
                 })
                 .then(function (result) {
+                    console.log('\naddresult:',result,'\n');
                     // 插入结果处理
                     // 继续后续操作
                     cb(null);
@@ -264,7 +261,7 @@ function add(req, res) {
                 .catch(function (err) {
                     // 错误处理
                     // 打印错误日志
-                    console.log(err);
+                    console.log('\nadderr:',err,'\n');
                     // 传递错误信息到async最终方法
                     cb(Constant.DEFAULT_ERROR);
                 });
@@ -283,7 +280,7 @@ function update(req, res) {
         // 校验参数方法
         checkParams: (cb) => {
             // 调用公共方法中的校验参数方法，成功继续后面操作，失败则传递错误信息到async最终方法
-            Common.checkParams(req.body, ['id', 'username', 'password', 'name', 'role'], cb);
+            Common.checkParams(req.body, ['id', 'username', 'password'], cb);
         },
         // 更新方法，依赖校验参数方法
         update: cb => {
@@ -292,8 +289,6 @@ function update(req, res) {
                 .update({
                     username: req.body.username,
                     password: req.body.password,
-                    name: req.body.name,
-                    role: req.body.role
                 }, {
                     where: {
                         id: req.body.id
