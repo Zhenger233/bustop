@@ -3,3 +3,31 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  p 已经实现的API:  前面的[]表示类型
+  p
+  p [GET]139.155.249.72:2333/api/line/linename  
+  p linename 改成具体线路名，返回改线路经过的站点
+  p
+  p [GET]139.155.249.72:2333/api/lines/stationname  
+  p stationname 改成具体站点名，返回经过该站点的线路
+  p
+  p [GET]139.155.249.72:2333/api/allstations  
+  p  返回所有的站点
+  p
+  p [POST]139.155.249.72:2333/users/login  
+  p  携带数据为 username, password ,返回登录状态
+  p
+  p [GET]139.155.249.72:2333/users/info/id  
+  p  id 改成用户id，返回用户信息
+  p
+  p [POST]139.155.249.72:2333/users/add  
+  p  携带数据为 username, password ,返回添加状态
+  p
+  p [POST]139.155.249.72:2333/users/change 
+  p  携带数据为 username, password ,返回修改状态
+  p
+  p [POST]139.155.249.72:2333/users/delete  
+  p  携带数据为用户id, 返回删除状态
+  p
+  p [POST]139.155.249.72:2333/users/feedback 
+  p  携带数据为用户id和反馈内容content，返回反馈状态
