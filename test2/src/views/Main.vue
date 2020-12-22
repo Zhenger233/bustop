@@ -41,32 +41,30 @@
       <el-main>
         <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="search-box">
           <el-form-item label="" prop="region1">
-            <el-select v-model="value1" multiple placeholder="请选择起点">
+            <el-select v-model="value1" style="margin-left: 20px;" placeholder="请选择起点">
               <el-option
                 v-for="item in options"
                 :key="item.value"
                 :label="item.label"
-                :value="item.value">
+                :value="item">
               </el-option>
             </el-select>
 
             <el-select
               v-model="value2"
-              multiple
-              collapse-tags
               style="margin-left: 20px;"
               placeholder="请选择终点">
               <el-option
                 v-for="item in options"
                 :key="item.value"
                 :label="item.label"
-                :value="item.value">
+                :value="item">
               </el-option>
             </el-select>
+          </el-form-item>
 
-</el-form-item>
-
-          <el-button type="primary" icon="el-icon-search">搜索</el-button>
+<!--          <el-button type="primary" icon="el-icon-search">搜索</el-button>-->
+          <el-button class="orderBtn1 sIRicon2" href="javascript:void(0);" @click="toInfo(value1,value2)">搜索</el-button>
         </el-form>
       </el-main>
     </el-container>
@@ -78,32 +76,53 @@
 
 
 <script>
+const axios=require('axios');
 export default {
   data() {
     return {
+        imgUrl:'',
+        // options: [],
+        apiUrl: 'http://139.155.249.72:2333/api/allstations',
+
       options: [{
-        value: '选项1',
-        label: '龙湖时代天街'
-      }, {
-        value: '选项2',
-        label: '犀浦快铁'
-      }, {
-        value: '选项3',
-        label: '天润路'
-      }, {
-        value: '选项4',
-        label: '合信路'
-      }, {
-        value: '选项5',
-        label: '锦城学院'
+        value: '',
+        label: ''
       }],
+      // }, {
+      //   value: '选项2',
+      //   label: '犀浦快铁'
+      // }, {
+      //   value: '选项3',
+      //   label: '天润路'
+      // }, {
+      //   value: '选项4',
+      //   label: '合信路'
+      // }, {
+      //   value: '选项5',
+      //   label: '锦城学院'
+      // }],
       value1: [],
       value2: [],
-      imgUrl:'',
       ruleForm: {
         pass: ''
       },
     }
+  },
+  created() {
+    console.log('\ncreated.\n');
+    // this.$http.get(this.apiUrl).then((response) => {
+    //   console.log('\nres: ', response);
+    //   this.item = response
+    //   this.todos=response
+    // }, (error) => {
+    //   console.log('error:', error)
+    // })
+    axios.get(this.apiUrl).then(res=>{console.log('\nres:',res,'\n');
+    res.data.forEach((v,i)=>{
+      this.options.push({value:i,label:v});
+    })
+    //this.options.label =res.data;
+    }).catch(err=>{console.log(err)});
   },
 
   methods: {
@@ -136,6 +155,14 @@ export default {
           return false;
         }
       });
+    },
+    toInfo: function(start,end){
+      console.log('start:',start.label,'end:',end.label);
+      this.$router.push({
+        path: '/search_result',
+        // name: 'mallList',
+        query: {start:start.label,end:end.label}
+      })
     }
   }
 }
