@@ -6,13 +6,19 @@
     </el-header>
 
     <el-main>
-      <div>
-        <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" :label-position="labelPosition" label-width="100px" class="login-box" v-for = "line in item">
-          <el-form-item label="">
-            <el-button type="primary" @click="submitForm('ruleForm')">{{line}}</el-button>
-          </el-form-item>
-        </el-form>
-      </div>
+<!--      <div>-->
+<!--        <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" :label-position="labelPosition" label-width="100px" class="login-box" v-for = "line in item">-->
+<!--          <el-form-item label="">-->
+<!--            <el-button type="primary" @click="submitForm('ruleForm')">{{line}}</el-button>-->
+<!--            <a class="orderBtn1 sIRicon2" href="javascript:void(0);" @click="toInfo(line)">{{line}}</a>-->
+<!--          </el-form-item>-->
+<!--        </el-form>-->
+<!--      </div>-->
+      <el-card class="box-card">
+        <div  class="text item" v-for = "line in item">
+          {{line}}
+        </div>
+      </el-card>
     </el-main>
   </el-container>
 </template>

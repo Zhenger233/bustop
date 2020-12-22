@@ -7,6 +7,8 @@ import about from "../views/about"
 import alllines from "../views/alllines"
 import user from "../views/user"
 import line from "../views/line"
+import search_result from "../views/search_result"
+import currentbus from "../views/currentbus"
 ;
 
 Vue.use(Router)
@@ -54,6 +56,18 @@ export default new Router({
       path: '/line',
       name: 'line',
       component: line
+    },
+    //查询结果
+    {
+      path: '/search_result',
+      name: 'search_result',
+      component: search_result
+    },
+    //当前公交运营情况
+    {
+      path: '/currentbus',
+      name: 'currentbus',
+      component: currentbus
     }
   ]
 })
