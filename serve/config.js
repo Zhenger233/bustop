@@ -5,7 +5,7 @@ const config = {
   // MySQL数据库配置
   MYSQL: {
     host: 'localhost',
-    database: 'BusStopTest',
+    database: 'BusStop',
     username: 'root',
     password: '123456'
   }

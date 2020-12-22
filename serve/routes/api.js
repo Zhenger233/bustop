@@ -14,6 +14,10 @@ router.get('/lines/:stationname',api.station2lines);
 router.get('/stations',api.getstations);
 router.get('/allstations',api.getstations);
 router.get('/allbus',api.getallbus);
+// router.get('/search',function(req,res){
+//   res.sendFile('search.html',{root:__dirname});
+// })
+router.get('/search',api.searchlines);
 
 
 module.exports = router;
