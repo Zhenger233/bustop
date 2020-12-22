@@ -19,5 +19,4 @@ router.get('/allbus',api.getallbus);
 // })
 router.get('/search',api.searchlines);
 
-
 module.exports = router;
